@@ -64,7 +64,7 @@ function Products() {
         onClick={() => setActiveImage(item.image)}
       />
 
-      <div className="overlay">
+      {/* <div className="overlay">
         <a
           href="https://www.instagram.com/jbnca_kes/"
           target="_blank"
@@ -72,10 +72,10 @@ function Products() {
         >
           Order on Instagram
         </a>
-      </div>
+      </div> */}
 
       <h3>{item.name}</h3>
-      <p className="price">{item.price}</p>
+      {/* <p className="price">{item.price}</p> */}
     </div>
   );
 
