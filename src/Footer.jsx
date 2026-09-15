@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
 
@@ -21,9 +21,6 @@ function Footer() {
             <a href="https://www.instagram.com/jbnca_kes/" target="_blank" rel="noreferrer" title="Instagram">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href="https://wa.me/?text=Hi%20JBN%20Cakes!" target="_blank" rel="noreferrer" title="WhatsApp" className="ms-2">
-              <FontAwesomeIcon icon={faWhatsapp} />
-            </a>
           </div>
         </div>
 
@@ -34,7 +31,7 @@ function Footer() {
             <li><a href="#home">Home</a></li>
             <li><a href="#cakes">Cakes & Desserts</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#reviews">Customer Reviews</a></li>
+            {/* <li><a href="#reviews">Customer Reviews</a></li> */}
           </ul>
         </div>
 

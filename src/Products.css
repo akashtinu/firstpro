@@ -175,34 +175,23 @@
   gap: 8px;
 }
 
-.btn-order-wa,
 .btn-order-ig {
-  flex: 1;
+  display: block;
+  width: 100%;
   text-align: center;
-  padding: 7px 10px;
+  padding: 8px 14px;
   border-radius: 20px;
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 600;
   text-decoration: none;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  color: #fff !important;
   transition: all 0.3s ease;
 }
 
-.btn-order-wa {
-  background: #25d366;
-  color: #fff !important;
-}
-
-.btn-order-wa:hover {
-  background: #1ebc57;
-}
-
-.btn-order-ig {
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-  color: #fff !important;
-}
-
 .btn-order-ig:hover {
-  opacity: 0.9;
+  opacity: 0.95;
+  transform: translateY(-1px);
 }
 
 /* BADGE */
@@ -310,25 +299,17 @@
   gap: 12px;
 }
 
-.btn-modal-wa,
 .btn-modal-ig {
-  flex: 1;
+  display: block;
+  width: 100%;
   text-align: center;
   padding: 12px 16px;
   border-radius: 30px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-modal-wa {
-  background: #25d366;
-  color: #fff !important;
-}
-
-.btn-modal-ig {
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
   color: #fff !important;
+  transition: all 0.3s ease;
 }
 
 /* RESPONSIVE */

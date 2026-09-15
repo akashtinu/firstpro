@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import logo from "./assets/jbn.png";
 import "./Navbar.css";
 
@@ -63,27 +63,16 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Floating Action Buttons */}
-      <div className="floating-buttons-container">
-        <a
-          href="https://wa.me/?text=Hi%20JBN%20Cakes,%20I%20want%20to%20inquire%20about%20ordering%20a%20custom%20cake!"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="floating-btn floating-whatsapp"
-          title="Chat on WhatsApp"
-        >
-          <FontAwesomeIcon icon={faWhatsapp} className="floating-icon" />
-        </a>
-        <a
-          href="https://www.instagram.com/jbnca_kes/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="floating-btn floating-instagram"
-          title="Follow on Instagram"
-        >
-          <FontAwesomeIcon icon={faInstagram} className="floating-icon" />
-        </a>
-      </div>
+      {/* Floating Instagram */}
+      <a
+        href="https://www.instagram.com/jbnca_kes/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="floating-instagram"
+        title="Follow on Instagram"
+      >
+        <FontAwesomeIcon icon={faInstagram} bounce className="floating-instagram-icon" />
+      </a>
     </>
   );
 }

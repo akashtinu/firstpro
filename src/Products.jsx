@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import "./Products.css";
 
 import img1 from "./assets/brow.webp";
@@ -67,13 +67,8 @@ function Products() {
     return matchesCategory && matchesSearch;
   });
 
-  const getInstagramOrderLink = (itemName) => {
+  const getInstagramOrderLink = () => {
     return `https://www.instagram.com/jbnca_kes/`;
-  };
-
-  const getWhatsappOrderLink = (itemName) => {
-    const message = encodeURIComponent(`Hi JBN Cakes, I would like to order the ${itemName}!`);
-    return `https://wa.me/?text=${message}`;
   };
 
   const renderCard = (item, index) => (
@@ -89,23 +84,15 @@ function Products() {
 
       <div className="card-info">
         <h3>{item.name}</h3>
-        <p className="price">{item.price}</p>
-        <div className="card-actions">
-          <a
-            href={getWhatsappOrderLink(item.name)}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-order-wa"
-          >
-            <FontAwesomeIcon icon={faWhatsapp} /> Order
-          </a>
+        {/* <p className="price">{item.price}</p> */}
+        <div className="card-actions"  style={{marginTop:"10px"}}>
           <a
             href={getInstagramOrderLink(item.name)}
             target="_blank"
             rel="noreferrer"
             className="btn-order-ig"
           >
-            <FontAwesomeIcon icon={faInstagram} /> DM
+            <FontAwesomeIcon icon={faInstagram} className="me-1" /> Order on Instagram
           </a>
         </div>
       </div>
@@ -180,20 +167,12 @@ function Products() {
               </p>
               <div className="modal-actions">
                 <a
-                  href={getWhatsappOrderLink(activeItem.name)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-modal-wa"
-                >
-                  <FontAwesomeIcon icon={faWhatsapp} /> Order on WhatsApp
-                </a>
-                <a
                   href={getInstagramOrderLink(activeItem.name)}
                   target="_blank"
                   rel="noreferrer"
                   className="btn-modal-ig"
                 >
-                  <FontAwesomeIcon icon={faInstagram} /> Order on Instagram
+                  <FontAwesomeIcon icon={faInstagram} className="me-1" /> Order on Instagram
                 </a>
               </div>
             </div>

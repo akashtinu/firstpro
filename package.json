@@ -14,7 +14,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "'": "file:awesome.me/kit-KIT_CODE@latest'",
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-regular-svg-icons": "^7.1.0",

@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Home from "./home";
 import Products from "./Products";
 import About from "./about";
-import Testimonials from "./Testimonials";
+// import Testimonials from "./Testimonials";
 import Footer from "./Footer";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Home />
       <Products />
       <About />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Footer />
     </>
   );
