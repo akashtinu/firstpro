@@ -179,14 +179,7 @@ function Products() {
                 Handcrafted with fresh, premium ingredients. Customized according to your preferred size and design requirements.
               </p>
               <div className="modal-actions">
-                <a
-                  href={getWhatsappOrderLink(activeItem.name)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn-modal-wa"
-                >
-                  <FontAwesomeIcon icon={faWhatsapp} /> Order on WhatsApp
-                </a>
+               
                 <a
                   href={getInstagramOrderLink(activeItem.name)}
                   target="_blank"
