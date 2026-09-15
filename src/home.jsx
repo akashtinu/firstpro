@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import logo from "./assets/jbn_cakes.jpeg";
 import "./home.css";
 
@@ -7,48 +9,57 @@ function Home() {
     <main className="main-content" id="home">
       {/* HERO */}
       <section className="hero fade-in">
-        <div className="hero-text slide-left" >
-          <h1 style={{color:" rgba(199, 48, 118, 0.95)"}}>JBN Cakes</h1>
+        <div className="hero-text slide-left">
+          <span className="hero-badge">✨ Handcrafted in Kanyakumari</span>
+          <h1 style={{ color: "rgba(199, 48, 118, 0.95)" }}>JBN Cakes</h1>
           
-          <h2 >
-            Designer cakes made fresh premium cakes in kanyakumari
+          <h2>
+            Fresh, Handcrafted Designer & Premium Custom Cakes for All Your Special Moments
           </h2>
 
+          <p className="hero-description">
+            From birthdays and weddings to intimate celebrations, we bake custom cakes with premium ingredients and artistic detail.
+          </p>
+
+          <div className="hero-actions">
+            <a href="#cakes" className="btn btn-primary-custom">
+              🎂 Explore Cakes
+            </a>
+            <a
+              href="https://www.instagram.com/jbnca_kes/"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-secondary-custom"
+            >
+              <FontAwesomeIcon icon={faInstagram} className="me-1" /> Order on Instagram
+            </a>
+          </div>
+
+          <div className="trust-badges">
+            <span className="trust-chip">⭐ 5.0 Star Rated</span>
+            <span className="trust-chip">🚚 Fresh Local Delivery</span>
+            <span className="trust-chip">❤️ Made With Love</span>
+          </div>
         </div>
 
         <div className="hero-image slide-right">
           <img src={logo} alt="JBN Cakes logo" />
-           {/* <div className="hero-actions">
-  
-</div> */}
-
-
         </div>
-        {/* <div className="hero-actions">
-  <a
-    href="https://www.instagram.com/jbnca_kes/"
-    target="_blank"
-    rel="noreferrer"
-    className="btn primary"
-  >
-    Contact on Instagram
-  </a>
-</div> */}
       </section>
 
       {/* FEATURES */}
       <section className="features fade-in">
         <div className="feature-card">
           <h3>🎂 Handcrafted Cakes</h3>
-          <p>Every cake is freshly baked and uniquely designed for you.</p>
+          <p>Every cake is freshly baked and uniquely designed for your special occasion.</p>
         </div>
         <div className="feature-card">
           <h3>✨ Premium Ingredients</h3>
-          <p>Only the finest chocolate, cream, and flavors we trust.</p>
+          <p>Only the finest Belgian chocolate, fresh cream, and rich flavors we trust.</p>
         </div>
         <div className="feature-card">
-          <h3>❤️ Made With Love</h3>
-          <p>We bake with passion to make your moments sweeter.</p>
+          <h3>❤️ Made With Passion</h3>
+          <p>We bake with passion and precision to bring sweetness and smiles to your events.</p>
         </div>
       </section>
     </main>

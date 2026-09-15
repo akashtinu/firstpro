@@ -82,34 +82,64 @@
   }
 }
 
-/* FLOATING INSTAGRAM */
-.floating-instagram {
+.nav-order-btn {
+  background: #ffffff;
+  color: rgba(199, 48, 118, 0.95) !important;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.nav-order-btn:hover {
+  background: #fff0f6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* FLOATING ACTION BUTTONS */
+.floating-buttons-container {
   position: fixed;
   bottom: 22px;
   right: 22px;
   z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-/* Icon animation */
-.floating-instagram-icon {
-  font-size: 34px;
+.floating-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   color: #fff;
-  padding: 12px;
-  border-radius: 14px;
-  background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
- 
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
 }
 
-.floating-instagram-icon:hover {
-  transform: scale(1.2) rotate(8deg);
+.floating-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Floating animation */
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
+.floating-whatsapp {
+  background: #25d366;
+}
+
+.floating-instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+.floating-icon {
+  font-size: 26px;
+  color: #fff;
 }
 
 /* MOBILE */

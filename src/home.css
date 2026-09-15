@@ -34,30 +34,81 @@
 }
 
 
-/* .hero-actions {
-  margin-top: 28px;
-} */
-
-/* .btn {
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-size: 0.95rem;
-  text-decoration: none;
+.hero-badge {
   display: inline-block;
-  transition: all 0.3s ease;
-} */
-
-/* .btn.primary {
-  
-   background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
-  color: #fff;
+  background: rgba(199, 48, 118, 0.1);
+  color: rgba(199, 48, 118, 0.95);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
 }
 
-.btn.primary:hover {
-  
-   background: linear-gradient(45deg,#d47324,#cc2771,#742f9c,#4953c0);
-  transform: translateY(-3px);
-} */
+.hero-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 10px;
+  margin-bottom: 24px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.btn-primary-custom {
+  background: rgba(199, 48, 118, 0.95);
+  color: #fff !important;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(199, 48, 118, 0.3);
+}
+
+.btn-primary-custom:hover {
+  background: rgba(170, 35, 98, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(199, 48, 118, 0.4);
+}
+
+.btn-secondary-custom {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  color: #fff !important;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.trust-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.trust-chip {
+  background: #fff;
+  border: 1px solid rgba(199, 48, 118, 0.2);
+  color: #444;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
 
 
 .features {

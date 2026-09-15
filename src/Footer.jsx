@@ -1,15 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faWhatsapp,
-  faFacebook
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faLocationDot,
-  faPhone,
-  faEnvelope
-} from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import "./Footer.css";
 
 function Footer() {
@@ -21,21 +13,18 @@ function Footer() {
         <div className="footer-box">
           <h2 className="footer-logo">JBN Cakes</h2>
           <p className="footer-text">
-            Handcrafted premium cakes & desserts made with love for every
-            celebration.
+            Handcrafted premium designer cakes & desserts made fresh with love for every celebration in Kanyakumari.
           </p>
           
-          <div className="footer-box">
-          
-          <div className="footer-socials" ><h3 style={{paddingTop:"8px"}}>Follow Us On : </h3>
-            <a href="https://www.instagram.com/jbnca_kes/" target="_blank" rel="noreferrer">
+          <div className="footer-socials">
+            <h3 style={{ paddingTop: "8px" }}>Follow Us On:</h3>
+            <a href="https://www.instagram.com/jbnca_kes/" target="_blank" rel="noreferrer" title="Instagram">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            
-            
+            <a href="https://wa.me/?text=Hi%20JBN%20Cakes!" target="_blank" rel="noreferrer" title="WhatsApp" className="ms-2">
+              <FontAwesomeIcon icon={faWhatsapp} />
+            </a>
           </div>
-        </div>
-
         </div>
 
         {/* Links */}
@@ -43,9 +32,9 @@ function Footer() {
           <h3>Quick Links</h3>
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#cakes">Cakes</a></li>
-            <li><a href="#brownies">Brownies</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#cakes">Cakes & Desserts</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#reviews">Customer Reviews</a></li>
           </ul>
         </div>
 

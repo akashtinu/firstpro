@@ -3,20 +3,18 @@ import Navbar from "./Navbar";
 import Home from "./home";
 import Products from "./Products";
 import About from "./about";
+import Testimonials from "./Testimonials";
 import Footer from "./Footer";
-import logo from "./assets/jbn_cakes.jpeg";
-
 
 function App() {
-
-
   return (
     <>
       <Navbar />
-       <Home />
-       <Products />
-        <About />
-        <Footer />
+      <Home />
+      <Products />
+      <About />
+      <Testimonials />
+      <Footer />
     </>
   );
 }

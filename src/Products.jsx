@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import "./Products.css";
 
 import img1 from "./assets/brow.webp";
@@ -18,28 +21,32 @@ import img14 from "./assets/rose.jpg";
 import img15 from "./assets/Blueberry.webp";
 
 function Products() {
-  const [activeImage, setActiveImage] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const cakes = [
-    { name: "Vanilla Cake", price: "₹500", image: img4},
-    { name: "Rasamalai Cake", price: "₹600", image: img5},
-    { name: "Chocolate Cake", price: "₹600", image: img6 },
-    { name: "Red Velvet Cake", price: "₹550", image: img7 },
-    { name: "Tender Coconut Cake", price: "₹650", image: img8 },
-    { name: "Black Forest Cake", price: "₹550", image: img9 },
-    { name: "White Forest Cake", price: "₹550", image: img10 },
-    { name: "Choco Truffle Cake", price: "₹600", image: img11 },
-    { name: "Honey Cake", price: "₹550", image: img12 },
-    { name: "Butterscotch Cake", price: "₹500", image: img13 },
-    { name: "Rosemilk Cake", price: "₹550", image: img14 },
-    { name: "Blueberry Cake", price: "₹550", image: img15 },
+    { name: "Vanilla Cake", price: "₹500 / kg", category: "cakes", image: img4, tag: "Popular" },
+    { name: "Rasamalai Cake", price: "₹600 / kg", category: "cakes", image: img5, tag: "Bestseller" },
+    { name: "Chocolate Cake", price: "₹600 / kg", category: "cakes", image: img6 },
+    { name: "Red Velvet Cake", price: "₹550 / kg", category: "cakes", image: img7, tag: "Trending" },
+    { name: "Tender Coconut Cake", price: "₹650 / kg", category: "cakes", image: img8, tag: "Special" },
+    { name: "Black Forest Cake", price: "₹550 / kg", category: "cakes", image: img9 },
+    { name: "White Forest Cake", price: "₹550 / kg", category: "cakes", image: img10 },
+    { name: "Choco Truffle Cake", price: "₹600 / kg", category: "cakes", image: img11, tag: "Bestseller" },
+    { name: "Honey Cake", price: "₹550 / kg", category: "cakes", image: img12 },
+    { name: "Butterscotch Cake", price: "₹500 / kg", category: "cakes", image: img13 },
+    { name: "Rosemilk Cake", price: "₹550 / kg", category: "cakes", image: img14, tag: "Special" },
+    { name: "Blueberry Cake", price: "₹550 / kg", category: "cakes", image: img15 },
   ];
 
   const brownies = [
-    { name: "Brownie", price: "₹600", image: img1},
-    { name: "Nuts Brownie", price: "₹700", image: img2 },
-    { name: "Triple Chocolate Brownie", price: "₹700", image: img3 },
+    { name: "Classic Brownie", price: "₹600", category: "brownies", image: img1 },
+    { name: "Nuts Brownie", price: "₹700", category: "brownies", image: img2, tag: "Bestseller" },
+    { name: "Triple Chocolate Brownie", price: "₹700", category: "brownies", image: img3, tag: "Favorite" },
   ];
+
+  const allItems = [...cakes, ...brownies];
 
   useEffect(() => {
     const items = document.querySelectorAll(".reveal");
@@ -49,47 +56,148 @@ function Products() {
           if (entry.isIntersecting) entry.target.classList.add("active");
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
     items.forEach(item => observer.observe(item));
-  }, []);
+  }, [activeCategory, searchQuery]);
+
+  const filteredItems = allItems.filter(item => {
+    const matchesCategory = activeCategory === "all" || item.category === activeCategory;
+    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
+  const getInstagramOrderLink = (itemName) => {
+    return `https://www.instagram.com/jbnca_kes/`;
+  };
+
+  const getWhatsappOrderLink = (itemName) => {
+    const message = encodeURIComponent(`Hi JBN Cakes, I would like to order the ${itemName}!`);
+    return `https://wa.me/?text=${message}`;
+  };
 
   const renderCard = (item, index) => (
     <div className="cake-card reveal" key={index}>
       {item.tag && <span className="badge">{item.tag}</span>}
 
-      <img
-        src={item.image}
-        alt={item.name}
-        onClick={() => setActiveImage(item.image)}
-      />
+      <div className="img-container" onClick={() => setActiveItem(item)}>
+        <img src={item.image} alt={item.name} />
+        <div className="overlay">
+          <span>Click to View</span>
+        </div>
+      </div>
 
-      {/* <div className="overlay">
-        <a
-          href="https://www.instagram.com/jbnca_kes/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Order on Instagram
-        </a>
-      </div> */}
-
-      <h3>{item.name}</h3>
-      {/* <p className="price">{item.price}</p> */}
+      <div className="card-info">
+        <h3>{item.name}</h3>
+        <p className="price">{item.price}</p>
+        <div className="card-actions">
+          <a
+            href={getWhatsappOrderLink(item.name)}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-order-wa"
+          >
+            <FontAwesomeIcon icon={faWhatsapp} /> Order
+          </a>
+          <a
+            href={getInstagramOrderLink(item.name)}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-order-ig"
+          >
+            <FontAwesomeIcon icon={faInstagram} /> DM
+          </a>
+        </div>
+      </div>
     </div>
   );
 
   return (
-    <section className="products">
-      <h2 className="section-title" id="cakes"  style={{color:" rgba(199, 48, 118, 0.95)"}}>Cakes</h2>
-      <div className="cake-grid">{cakes.map(renderCard)}</div>
+    <section className="products" id="cakes">
+      <h2 className="section-title" style={{ color: "rgba(199, 48, 118, 0.95)" }}>
+        Our Delicious Creations
+      </h2>
+      <p className="section-subtitle text-center">
+        Explore our handcrafted range of designer cakes and rich chocolate brownies
+      </p>
 
-      <h2 className="section-title" id="brownies"  style={{color:" rgba(199, 48, 118, 0.95)"}}>Brownies</h2>
-      <div className="cake-grid">{brownies.map(renderCard)}</div>
+      {/* FILTER & SEARCH CONTROL BAR */}
+      <div className="catalog-controls">
+        <div className="category-tabs">
+          <button
+            className={`tab-btn ${activeCategory === "all" ? "active" : ""}`}
+            onClick={() => setActiveCategory("all")}
+          >
+            All Desserts
+          </button>
+          <button
+            className={`tab-btn ${activeCategory === "cakes" ? "active" : ""}`}
+            onClick={() => setActiveCategory("cakes")}
+          >
+            🎂 Cakes
+          </button>
+          <button
+            className={`tab-btn ${activeCategory === "brownies" ? "active" : ""}`}
+            onClick={() => setActiveCategory("brownies")}
+          >
+            🍫 Brownies
+          </button>
+        </div>
 
-      {activeImage && (
-        <div className="modal" onClick={() => setActiveImage(null)}>
-          <img src={activeImage} alt="Cake Preview" />
+        <div className="search-box">
+          <FontAwesomeIcon icon={faSearch} className="search-icon" />
+          <input
+            type="text"
+            placeholder="Search cake flavor..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+      </div>
+
+      {/* PRODUCT GRID */}
+      {filteredItems.length > 0 ? (
+        <div className="cake-grid">{filteredItems.map(renderCard)}</div>
+      ) : (
+        <div className="no-results text-center py-5">
+          <p>No cakes found matching "{searchQuery}".</p>
+        </div>
+      )}
+
+      {/* ENHANCED LIGHTBOX MODAL */}
+      {activeItem && (
+        <div className="modal-backdrop" onClick={() => setActiveItem(null)}>
+          <div className="modal-content-card" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={() => setActiveItem(null)}>
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+            <img src={activeItem.image} alt={activeItem.name} className="modal-img" />
+            <div className="modal-details">
+              <h3>{activeItem.name}</h3>
+              <p className="modal-price">{activeItem.price}</p>
+              <p className="modal-desc">
+                Handcrafted with fresh, premium ingredients. Customized according to your preferred size and design requirements.
+              </p>
+              <div className="modal-actions">
+                <a
+                  href={getWhatsappOrderLink(activeItem.name)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-modal-wa"
+                >
+                  <FontAwesomeIcon icon={faWhatsapp} /> Order on WhatsApp
+                </a>
+                <a
+                  href={getInstagramOrderLink(activeItem.name)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-modal-ig"
+                >
+                  <FontAwesomeIcon icon={faInstagram} /> Order on Instagram
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </section>
