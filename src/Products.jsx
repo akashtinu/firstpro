@@ -161,10 +161,10 @@ function Products() {
             <img src={activeItem.image} alt={activeItem.name} className="modal-img" />
             <div className="modal-details">
               <h3>{activeItem.name}</h3>
-              <p className="modal-price">{activeItem.price}</p>
+              {/* <p className="modal-price">{activeItem.price}</p>
               <p className="modal-desc">
                 Handcrafted with fresh, premium ingredients. Customized according to your preferred size and design requirements.
-              </p>
+              </p> */}
               <div className="modal-actions">
                 <a
                   href={getInstagramOrderLink(activeItem.name)}
