@@ -35,12 +35,7 @@ function Home() {
             </a>
           </div>
 
-          <div className="trust-badges">
-            <span className="trust-chip">⭐ 5.0 Star Rated</span>
-            <span className="trust-chip">🚚 Fresh Local Delivery</span>
-            <span className="trust-chip">❤️ Made With Love</span>
-          </div>
-        </div>
+          
 
         <div className="hero-image slide-right">
           <img src={logo} alt="JBN Cakes logo" />
