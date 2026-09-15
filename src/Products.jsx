@@ -115,7 +115,7 @@ function Products() {
             className={`tab-btn ${activeCategory === "all" ? "active" : ""}`}
             onClick={() => setActiveCategory("all")}
           >
-            All Desserts
+            All 
           </button>
           <button
             className={`tab-btn ${activeCategory === "cakes" ? "active" : ""}`}
