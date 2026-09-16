@@ -29,7 +29,8 @@ function Footer() {
           <h3>Quick Links</h3>
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#cakes">Cakes & Desserts</a></li>
+            <li><a href="#cakes">Cakes & Brownies</a></li>
+            
             <li><a href="#about">About Us</a></li>
             {/* <li><a href="#reviews">Customer Reviews</a></li> */}
           </ul>
