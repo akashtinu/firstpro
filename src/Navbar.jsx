@@ -35,7 +35,7 @@ function Navbar() {
 
           <div className={`navbar-collapse ${open ? "open" : ""}`}>
             <ul className="navbar-nav ms-auto align-items-center text-center">
-              {["Home", "Cakes", "Brownies", "About"].map((item) => (
+              {["Home", "Cakes & Brownies", "About"].map((item) => (
                 <li className="nav-item" key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}
