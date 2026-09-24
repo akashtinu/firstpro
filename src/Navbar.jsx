@@ -35,17 +35,21 @@ function Navbar() {
 
           <div className={`navbar-collapse ${open ? "open" : ""}`}>
             <ul className="navbar-nav ms-auto align-items-center text-center">
-              {["Home", "Cakes","Brownies", "About"].map((item) => (
-                <li className="nav-item" key={item}>
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    className="nav-link"
-                    onClick={() => setOpen(false)}
-                  >
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li className="nav-item">
+                <a href="#home" className="nav-link" onClick={() => setOpen(false)}>
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#cakes" className="nav-link" onClick={() => setOpen(false)}>
+                  Cakes & Brownies
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#about" className="nav-link" onClick={() => setOpen(false)}>
+                  About
+                </a>
+              </li>
               {/* <li className="nav-item ms-lg-3 mt-2 mt-lg-0">
                 <a
                   href="https://www.instagram.com/jbnca_kes/"
